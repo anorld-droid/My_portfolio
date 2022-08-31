@@ -29,7 +29,7 @@ class _SHomeScreenState extends State<SHomeScreen> {
                   Stack(
                     children: [
                       CustomPaint(
-                        size: Size(width, 170),
+                        size: Size(width, 190),
                         painter: MyPainter(),
                       ),
                       Column(

@@ -13,6 +13,10 @@ class _LProjectsScreenState extends State<LProjectsScreen> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    return Scaffold();
+    return Scaffold(
+      body: Center(
+        child: Text("$width, Large Screen"),
+      ),
+    );
   }
 }

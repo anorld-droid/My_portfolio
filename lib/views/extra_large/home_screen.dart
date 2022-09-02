@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
 import '../widgets/curve_line.dart';
+import 'projects_screen.dart';
 
 class ELHomeScreen extends StatefulWidget {
   const ELHomeScreen({Key? key}) : super(key: key);
@@ -68,7 +69,7 @@ class _ELHomeScreenState extends State<ELHomeScreen> {
                                 ),
                               ),
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () => conn.navigateToProjects(),
                                 child: const Text(
                                   'Projects',
                                   style: TextStyle(
@@ -244,7 +245,7 @@ class _ELHomeScreenState extends State<ELHomeScreen> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () => conn.navigateToProjects(),
                 child: Icon(Icons.arrow_forward_ios, color: Colors.black),
                 style: ElevatedButton.styleFrom(
                   shape: CircleBorder(),
@@ -264,4 +265,12 @@ class _ELHomeScreenState extends State<ELHomeScreen> {
 class _MyController {
   _ELHomeScreenState state;
   _MyController(this.state);
+  void navigateToProjects() {
+    Navigator.pushAndRemoveUntil(
+        state.context,
+        MaterialPageRoute(
+          builder: (context) => const ELProjectsScreen(),
+        ),
+        (route) => route.isActive);
+  }
 }

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
 
-import '../widgets/curve_line.dart';
+import 'projects_screen.dart';
 
 class ESHomeScreen extends StatefulWidget {
   const ESHomeScreen({Key? key}) : super(key: key);
@@ -13,6 +11,13 @@ class ESHomeScreen extends StatefulWidget {
 }
 
 class _ESHomeScreenState extends State<ESHomeScreen> {
+  late _MyController conn;
+  @override
+  void initState() {
+    super.initState();
+    conn = _MyController(this);
+  }
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -67,7 +72,9 @@ class _ESHomeScreenState extends State<ESHomeScreen> {
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            conn.navigateToProjects();
+                          },
                           child: Text(
                             'Projects',
                             style: TextStyle(
@@ -313,7 +320,9 @@ class _ESHomeScreenState extends State<ESHomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      conn.navigateToProjects();
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),
                       padding: EdgeInsets.all(width > 650
@@ -346,4 +355,12 @@ class _ESHomeScreenState extends State<ESHomeScreen> {
 class _MyController {
   _ESHomeScreenState state;
   _MyController(this.state);
+  void navigateToProjects() {
+    Navigator.pushAndRemoveUntil(
+        state.context,
+        MaterialPageRoute(
+          builder: (context) => const ESProjectsScreen(),
+        ),
+        (route) => route.isActive);
+  }
 }

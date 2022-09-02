@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
 
 import '../widgets/curve_line.dart';
+import 'projects_screen.dart';
 
 class MHomeScreen extends StatefulWidget {
   static const routeName = "views/HomeScreen";
@@ -12,6 +13,13 @@ class MHomeScreen extends StatefulWidget {
 }
 
 class _MHomeScreenState extends State<MHomeScreen> {
+  late _MyController conn;
+  @override
+  void initState() {
+    super.initState();
+    conn = _MyController(this);
+  }
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -63,7 +71,7 @@ class _MHomeScreenState extends State<MHomeScreen> {
                                 ),
                               ),
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () => conn.navigateToProjects(),
                                 child: const Text(
                                   'Projects',
                                   style: TextStyle(
@@ -253,7 +261,7 @@ class _MHomeScreenState extends State<MHomeScreen> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () => conn.navigateToProjects(),
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
                   padding: const EdgeInsets.all(20),
@@ -273,4 +281,12 @@ class _MHomeScreenState extends State<MHomeScreen> {
 class _MyController {
   _MHomeScreenState state;
   _MyController(this.state);
+  void navigateToProjects() {
+    Navigator.pushAndRemoveUntil(
+        state.context,
+        MaterialPageRoute(
+          builder: (context) => const MProjectsScreen(),
+        ),
+        (route) => route.isActive);
+  }
 }

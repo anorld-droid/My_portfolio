@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-class ProjectsScreen extends StatefulWidget {
-  const ProjectsScreen({Key? key}) : super(key: key);
+class MProjectsScreen extends StatefulWidget {
+  const MProjectsScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProjectsScreen> createState() => _ProjectsScreenState();
+  State<MProjectsScreen> createState() => _MProjectsScreenState();
 }
 
-class _ProjectsScreenState extends State<ProjectsScreen> {
+class _MProjectsScreenState extends State<MProjectsScreen> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    return Scaffold();
+    return Scaffold(
+      body: Center(
+        child: Text("$width, Medium Screen"),
+      ),
+    );
   }
 }

@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
 import 'package:patrice_portfolio/utils/constants.dart';
+import '../responsive.dart';
 import '../widgets/curve_line.dart';
 import 'projects_screen.dart';
 

@@ -14,11 +14,48 @@ class Portfolio extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
       initialRoute: Routes.home,
-      routes: {
-        Routes.home: (context) => ResponsiveWidget(destination: Routes.home),
-        Routes.projects: (context) =>
-            ResponsiveWidget(destination: Routes.projects),
-        Routes.skills: (context) => ResponsiveWidget(destination: Routes.skills)
+      onGenerateRoute: (settings) {
+        if (settings.name == Routes.home) {
+          return PageRouteBuilder(
+              settings:
+                  settings, // Pass this to make popUntil(), pushNamedAndRemoveUntil(), works
+              pageBuilder: (_, __, ___) =>
+                  const ResponsiveWidget(destination: Routes.home),
+              transitionsBuilder: (_, animation, __, c) => ScaleTransition(
+                    scale: animation,
+                    child: FadeTransition(
+                      opacity: animation,
+                      child: const ResponsiveWidget(destination: Routes.home),
+                    ),
+                  ));
+        } else if (settings.name == Routes.projects) {
+          return PageRouteBuilder(
+              settings:
+                  settings, // Pass this to make popUntil(), pushNamedAndRemoveUntil(), works
+              pageBuilder: (_, __, ___) =>
+                  const ResponsiveWidget(destination: Routes.projects),
+              transitionsBuilder: (_, animation, __, c) => ScaleTransition(
+                    scale: animation,
+                    child: FadeTransition(
+                      opacity: animation,
+                      child:
+                          const ResponsiveWidget(destination: Routes.projects),
+                    ),
+                  ));
+        }
+
+        return PageRouteBuilder(
+            settings:
+                settings, // Pass this to make popUntil(), pushNamedAndRemoveUntil(), works
+            pageBuilder: (_, __, ___) =>
+                const ResponsiveWidget(destination: Routes.skills),
+            transitionsBuilder: (_, animation, __, c) => ScaleTransition(
+                  scale: animation,
+                  child: FadeTransition(
+                    opacity: animation,
+                    child: const ResponsiveWidget(destination: Routes.skills),
+                  ),
+                ));
       },
     );
   }

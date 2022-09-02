@@ -37,10 +37,6 @@ class _SHomeScreenState extends State<SHomeScreen> {
                 children: [
                   Stack(
                     children: [
-                      CustomPaint(
-                        size: Size(width, 190),
-                        painter: MyPainter(),
-                      ),
                       Column(
                         children: [
                           const SizedBox(height: 16),

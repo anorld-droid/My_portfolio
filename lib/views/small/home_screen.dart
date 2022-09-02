@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
 
+import '../../utils/constants.dart';
 import '../widgets/curve_line.dart';
 import 'projects_screen.dart';
 
@@ -250,11 +251,7 @@ class _MyController {
   _SHomeScreenState state;
   _MyController(this.state);
   void navigateToProjects() {
-    Navigator.pushAndRemoveUntil(
-        state.context,
-        MaterialPageRoute(
-          builder: (context) => const SProjectsScreen(),
-        ),
-        (route) => route.isActive);
+    Navigator.pushNamedAndRemoveUntil(
+        state.context, Routes.projects, ModalRoute.withName(Routes.home));
   }
 }

@@ -7,7 +7,7 @@ class ScreenSizes {
 }
 
 class Routes {
-  static const home = "views/home_screen";
-  static const projects = "views/projects_screen";
-  static const skills = "views/skills_screen";
+  static const home = "views/home";
+  static const projects = "views/projects";
+  static const skills = "views/skills";
 }

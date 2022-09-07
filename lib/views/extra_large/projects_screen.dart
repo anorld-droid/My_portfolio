@@ -112,9 +112,6 @@ class _ELProjectsScreenState extends State<ELProjectsScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SizedBox(
-                        width: 75,
-                      ),
                       Text(
                         'Some Of My Projects',
                         style: TextStyle(

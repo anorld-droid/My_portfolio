@@ -111,9 +111,7 @@ class _MProjectsScreenState extends State<MProjectsScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SizedBox(
-                        width: 75,
-                      ),
+                   
                       Text(
                         'Some Of My Projects',
                         style: TextStyle(

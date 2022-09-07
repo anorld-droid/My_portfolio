@@ -260,6 +260,9 @@ class _MProjectsScreenState extends State<MProjectsScreen> {
                               )
                             ]),
                           ),
+                          const SizedBox(
+                            height: 120,
+                          ),
                           SizedBox(
                             height: 560,
                             width: 590,
@@ -404,6 +407,9 @@ class _MProjectsScreenState extends State<MProjectsScreen> {
                                 ],
                               )
                             ]),
+                          ),
+                          const SizedBox(
+                            height: 120,
                           ),
                           SizedBox(
                             height: 560,

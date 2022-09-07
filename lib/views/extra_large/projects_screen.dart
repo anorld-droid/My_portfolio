@@ -518,7 +518,7 @@ class _ELProjectsScreenState extends State<ELProjectsScreen> {
                           ),
                           SizedBox(
                             height: 560,
-                            width: 790,
+                            width: 590,
                             child: Container(
                               width: 590,
                               height: 560,

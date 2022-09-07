@@ -406,20 +406,20 @@ class _SProjectsScreenState extends State<SProjectsScreen> {
                           ),
                           SizedBox(
                             height: 560,
-                            width: 590,
+                            width: width - 30,
                             child: Container(
-                              width: 590,
                               height: 560,
+                              width: width - 30,
                               decoration: const BoxDecoration(
                                   image: DecorationImage(
                                       image: AssetImage("images/Api.png"),
-                                      fit: BoxFit.fitHeight)),
+                                      fit: BoxFit.fitWidth)),
                             ),
                           )
                         ],
                       ),
                       const SizedBox(
-                        height: 120,
+                        height: 60,
                       ),
                       Column(
                         children: [

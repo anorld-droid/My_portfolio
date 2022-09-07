@@ -63,6 +63,9 @@ flutter:
     - assets/images/home_background.jpeg
     - assets/images/my_photo.jpg
     - assets/images/coding.gif
+    - assets/images/uhd.png
+    - assets/images/Api.png
+    - assets/images/Web.PNG
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

@@ -35,10 +35,6 @@ class _SProjectsScreenState extends State<SProjectsScreen> {
         SingleChildScrollView(
           child: Stack(
             children: [
-              CustomPaint(
-                size: Size(width, 170),
-                painter: MyPainter(),
-              ),
               Column(
                 children: [
                   const SizedBox(height: 16),
@@ -257,6 +253,9 @@ class _SProjectsScreenState extends State<SProjectsScreen> {
                               )
                             ]),
                           ),
+                          const SizedBox(
+                            height: 120,
+                          ),
                           SizedBox(
                             height: 560,
                             width: 590,
@@ -402,6 +401,9 @@ class _SProjectsScreenState extends State<SProjectsScreen> {
                               )
                             ]),
                           ),
+                          const SizedBox(
+                            height: 120,
+                          ),
                           SizedBox(
                             height: 560,
                             width: 590,
@@ -423,11 +425,11 @@ class _SProjectsScreenState extends State<SProjectsScreen> {
                         children: [
                           SizedBox(
                             height: 660,
-                            width: 740,
+                            width: 590,
                             child: Stack(children: [
                               Container(
-                                height: 600,
-                                width: 740,
+                                height: 660,
+                                width: 590,
                                 decoration: const BoxDecoration(
                                     image: DecorationImage(
                                         image: NetworkImage(
@@ -436,8 +438,8 @@ class _SProjectsScreenState extends State<SProjectsScreen> {
                                         fit: BoxFit.cover)),
                               ),
                               Container(
-                                height: 600,
-                                width: 740,
+                                height: 660,
+                                width: 590,
                                 decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     begin: Alignment.topCenter,
@@ -467,7 +469,7 @@ class _SProjectsScreenState extends State<SProjectsScreen> {
                                     height: 40,
                                   ),
                                   const SizedBox(
-                                    width: 700,
+                                    width: 550,
                                     child: Text(
                                       'A web application that facilitates the enrollement of new students to the university, it allows the students to create an account then start the enrollment process that is closely monitored by the administrator who can edit, delete and download a pdf version of the students who are at any stage of the enrollment.',
                                       textAlign: TextAlign.center,
@@ -511,6 +513,9 @@ class _SProjectsScreenState extends State<SProjectsScreen> {
                                 ],
                               )
                             ]),
+                          ),
+                          const SizedBox(
+                            height: 120,
                           ),
                           SizedBox(
                             height: 560,

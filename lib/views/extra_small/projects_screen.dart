@@ -3,6 +3,7 @@ import 'package:outline_gradient_button/outline_gradient_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../utils/constants.dart';
+import '../widgets/drop_down_menu.dart';
 
 class ESProjectsScreen extends StatefulWidget {
   const ESProjectsScreen({Key? key}) : super(key: key);
@@ -105,20 +106,8 @@ class _ESProjectsScreenState extends State<ESProjectsScreen> {
                                 fontFamily: 'Lobster'),
                           ),
                         ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Contacts',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: width > 650
-                                    ? 32
-                                    : width > 500
-                                        ? 24
-                                        : 16,
-                                fontFamily: 'Lobster'),
-                          ),
-                        )
+                                                      const DropDownMenu()
+
                       ],
                     ),
             ],

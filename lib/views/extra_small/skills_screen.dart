@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:outline_gradient_button/outline_gradient_button.dart';
 
 import '../../utils/constants.dart';
+import '../widgets/drop_down_menu.dart';
 
 class ESSkillsScreen extends StatefulWidget {
   const ESSkillsScreen({Key? key}) : super(key: key);
@@ -105,20 +106,7 @@ class _ESSkillsScreenState extends State<ESSkillsScreen> {
                                 fontFamily: 'Lobster'),
                           ),
                         ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Contacts',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: width > 650
-                                    ? 32
-                                    : width > 500
-                                        ? 24
-                                        : 16,
-                                fontFamily: 'Lobster'),
-                          ),
-                        )
+                        const DropDownMenu()
                       ],
                     ),
             ],

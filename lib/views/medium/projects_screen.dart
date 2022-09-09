@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../utils/constants.dart';
 import '../widgets/curve_line.dart';
+import '../widgets/drop_down_menu.dart';
 
 class MProjectsScreen extends StatefulWidget {
   const MProjectsScreen({Key? key}) : super(key: key);
@@ -88,16 +89,8 @@ class _MProjectsScreenState extends State<MProjectsScreen> {
                               fontFamily: 'Lobster'),
                         ),
                       ),
-                      TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'Contacts',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 32,
-                              fontFamily: 'Lobster'),
-                        ),
-                      )
+                                                    const DropDownMenu()
+
                     ],
                   ),
                 ],

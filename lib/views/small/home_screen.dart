@@ -3,6 +3,7 @@ import 'package:outline_gradient_button/outline_gradient_button.dart';
 
 import '../../utils/constants.dart';
 import '../widgets/curve_line.dart';
+import '../widgets/drop_down_menu.dart';
 import 'projects_screen.dart';
 
 class SHomeScreen extends StatefulWidget {
@@ -86,16 +87,7 @@ class _SHomeScreenState extends State<SHomeScreen> {
                                       fontFamily: 'Lobster'),
                                 ),
                               ),
-                              TextButton(
-                                onPressed: () {},
-                                child: const Text(
-                                  'Contacts',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 32,
-                                      fontFamily: 'Lobster'),
-                                ),
-                              )
+                              const DropDownMenu()
                             ],
                           ),
                         ],
@@ -249,5 +241,10 @@ class _MyController {
   void navigateToProjects() {
     Navigator.pushNamedAndRemoveUntil(
         state.context, Routes.projects, ModalRoute.withName(Routes.home));
+  }
+
+  void navigateToSkills() {
+    Navigator.pushNamedAndRemoveUntil(
+        state.context, Routes.skills, ModalRoute.withName(Routes.home));
   }
 }

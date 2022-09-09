@@ -4,6 +4,7 @@ import 'package:outline_gradient_button/outline_gradient_button.dart';
 import 'package:patrice_portfolio/utils/constants.dart';
 import '../responsive.dart';
 import '../widgets/curve_line.dart';
+import '../widgets/drop_down_menu.dart';
 import 'projects_screen.dart';
 
 class ELHomeScreen extends StatefulWidget {
@@ -14,6 +15,7 @@ class ELHomeScreen extends StatefulWidget {
 }
 
 class _ELHomeScreenState extends State<ELHomeScreen> {
+  bool showContact = false;
   late _MyController conn;
   @override
   void initState() {
@@ -82,7 +84,7 @@ class _ELHomeScreenState extends State<ELHomeScreen> {
                                 ),
                               ),
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () => conn.navigateToSkills(),
                                 child: const Text(
                                   'Skills',
                                   style: TextStyle(
@@ -91,16 +93,7 @@ class _ELHomeScreenState extends State<ELHomeScreen> {
                                       fontFamily: 'Lobster'),
                                 ),
                               ),
-                              TextButton(
-                                onPressed: () {},
-                                child: const Text(
-                                  'Contacts',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 32,
-                                      fontFamily: 'Lobster'),
-                                ),
-                              )
+                              const DropDownMenu()
                             ],
                           ),
                         ],
@@ -271,5 +264,10 @@ class _MyController {
   void navigateToProjects() {
     Navigator.pushNamedAndRemoveUntil(
         state.context, Routes.projects, ModalRoute.withName(Routes.home));
+  }
+
+  void navigateToSkills() {
+    Navigator.pushNamedAndRemoveUntil(
+        state.context, Routes.skills, ModalRoute.withName(Routes.home));
   }
 }

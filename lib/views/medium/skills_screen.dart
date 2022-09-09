@@ -3,6 +3,7 @@ import 'package:outline_gradient_button/outline_gradient_button.dart';
 
 import '../../utils/constants.dart';
 import '../widgets/curve_line.dart';
+import '../widgets/drop_down_menu.dart';
 
 class MSkillsScreen extends StatefulWidget {
   const MSkillsScreen({Key? key}) : super(key: key);
@@ -85,16 +86,7 @@ class _MSkillsScreenState extends State<MSkillsScreen> {
                         fontFamily: 'Lobster'),
                   ),
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Contacts',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 32,
-                        fontFamily: 'Lobster'),
-                  ),
-                )
+                const DropDownMenu()
               ],
             ),
           ],

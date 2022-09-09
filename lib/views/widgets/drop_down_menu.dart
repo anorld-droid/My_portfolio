@@ -21,6 +21,7 @@ class _DropDownMenuState extends State<DropDownMenu> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return DropdownButton(
         dropdownColor: Colors.black,
         value: selectedValue,
@@ -28,33 +29,41 @@ class _DropDownMenuState extends State<DropDownMenu> {
           DropdownMenuItem(
             value: 1,
             onTap: () {},
-            child: const Text('Contacts',
+            child: Text('Contacts',
                 style: TextStyle(
-                    color: Colors.white, fontSize: 32, fontFamily: 'Lobster')),
+                    color: Colors.white,
+                    fontSize: width > 650
+                        ? 32
+                        : width > 500
+                            ? 24
+                            : 16,
+                    fontFamily: 'Lobster')),
           ),
           DropdownMenuItem(
             value: 2,
             onTap: (() => conn.launchPhoneDialer()),
-            child: const Text('Phone Call',
+            child: Text('Phone Call',
                 style: TextStyle(
-                    color: Colors.white, fontSize: 24, fontFamily: 'Lobster')),
+                    color: Colors.white,
+                    fontSize: width > 500 ? 24 : 16,
+                    fontFamily: 'Lobster')),
           ),
           DropdownMenuItem(
               value: 3,
               onTap: () => conn.launchLink("https://twitter.com/anorld_droid"),
-              child: const Text('Twitter',
+              child: Text('Twitter',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24,
+                      fontSize: width > 500 ? 24 : 16,
                       fontFamily: 'Lobster'))),
           DropdownMenuItem(
               value: 4,
               onTap: () => conn
                   .launchLink("https://wa.me/+254713679320?text=Hey Anold, "),
-              child: const Text('Whatsapp',
+              child: Text('Whatsapp',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24,
+                      fontSize: width > 500 ? 24 : 16,
                       fontFamily: 'Lobster'))),
         ],
         onChanged: (int? value) {});
